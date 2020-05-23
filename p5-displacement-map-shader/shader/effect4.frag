@@ -66,13 +66,13 @@ void main() {
   // we will displace the image by the average color times the amt of displacement 
   float disp = avg * amt +0.5 - 0.5;
 
-  float n = noise(sin(uv)+cos(disp));
+  // float n = noise(uv+disp);
   // float n = noise(uv+cos(disp));
   
 
   // displacement works by moving the texture coordinates of one image with the colors of another image
   // add the displacement to the texture coordinages
-  vec4 pup = texture2D(img, (uv) * n -disp);
+  vec4 pup = texture2D(img, (uv) + disp);
 
   // output the image
   gl_FragColor = pup;
