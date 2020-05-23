@@ -22,6 +22,6 @@ void main(){
 	// gl_FragColor = vec4(cos(len * 2.0), cos(len * 3.0), cos(len * 1.0), 1.0);
 
 	// we can have a seperate color, obviously. so comment out the gl_FragColor above & uncomment the lines below
-	vec3 color = vec3(cos(len * 0.4), 0, sin(len * 5.0));
+	vec3 color = vec3(sin(len * 0.8), sin(len * 0.5), sin(len * 0.9));
 	gl_FragColor = vec4(color, 1.0);
 }
