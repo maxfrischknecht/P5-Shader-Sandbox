@@ -1,8 +1,10 @@
 let myShader;
 let filter, img;
 
-function preload(){
-  myShader = loadShader('shader/effect.vert', 'shader/effect.frag');
+function preload() {
+  // myShader = loadShader('shader/effect.vert', 'shader/effect.frag');
+  // myShader = loadShader('shader/effect.vert', 'shader/effect2.frag');
+  myShader = loadShader('shader/effect.vert', 'shader/effect3.frag');
 
   filter = loadImage('data/filter3.png');
   img = loadImage('data/image.jpg');
