@@ -4,12 +4,12 @@
 
 // a shader variable
 let uniformsShader;
-let cactiImg;
+let img;
 
 function preload(){
   // load the shader
   uniformsShader = loadShader('uniform.vert', 'uniform.frag');
-  cactiImg = loadImage('data/wave.jpeg');
+  img = loadImage('data/wave.jpeg');
 }
 
 function setup() {
@@ -24,8 +24,17 @@ function draw() {
 
   // setUniform can also send an image to a shader
   // 'cactiTex' is the name of the variable in our shader
-  // cactiImg, is a normal p5 image object
-  uniformsShader.setUniform('cactiTex', cactiImg);
+  // img, is a normal p5 image object
+  uniformsShader.setUniform('imgTex', img);
+  uniformsShader.setUniform('time', frameCount * 0.01);
+
+  let freq = map(mouseX, 0, width, 0, 10.0);
+  let amp = map(mouseY, 0, height, 0, 0.25);
+
+  // send the two values to the shader
+  uniformsShader.setUniform('frequency', freq);
+  uniformsShader.setUniform('amplitude', amp);
+
 
   // rect gives us some geometry on the screen
   rect(0,0,width, height);
